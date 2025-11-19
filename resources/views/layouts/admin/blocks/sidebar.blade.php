@@ -54,6 +54,9 @@
                             <li>
                                 <a href="index2.html"> Sales </a>
                             </li>
+                            <li>
+                                <a href="{{ route('nhanvien.index') }}"> DS Nhân Viên </a>
+                            </li>
                         </ul>
                     </li>
 

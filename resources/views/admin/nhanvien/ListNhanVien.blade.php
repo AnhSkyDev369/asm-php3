@@ -1,31 +1,4 @@
 @extends('layouts.admin.AdminLayout')
-{{-- @push('custom-css')
-    <style>
-        #load_screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.8);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 500;
-        }
-
-        #load_screen .spinner-grow {
-            width: 3rem;
-            height: 3rem;
-            color: #ff6600;
-        }
-
-        .navbar-item {
-            position: relative;
-            z-index: 1000;
-        }
-    </style>
-@endpush --}}
 @section('content')
     <div class="layout-px-spacing">
         <div class="middle-content container-xxl p-0">
@@ -159,7 +132,7 @@
 
             <div class="row layout-top-spacing">
 
-                <div class="col-12">
+                {{-- <div class="col-12">
                     <div class="alert alert-arrow-right alert-icon-right alert-light-success alert-dismissible fade show mb-4"
                         role="alert">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -513,21 +486,39 @@
                             </div>
                         </div>
                     </div>
-                </div>
-
+                </div> --}}
+                <table class="table table-striped">
+                    <thead>
+                        <th>STT</th>
+                        <th>Họ tên</th>
+                        <th>Email</th>
+                        <th>Ngày sinh</th>
+                        <th>Giới tính</th>
+                        <th>Lương</th>
+                        <th>Phòng Ban</th>
+                        {{-- <th>Ngày Tạo</th>
+        <th>Ngày Sửa Đổi</th> --}}
+                    </thead>
+                    <tbody>
+                        @foreach ($nhan_viens as $key => $nv)
+                            <tr>
+                                <td>{{ $key + 1 }}</td>
+                                <td>{{ $nv->ho_ten ?? ''}}</td>
+                                <td>{{ $nv->email ?? ''}}</td>
+                                <td>{{ $nv->ngay_sinh ?? ''}}</td>
+                                <td>{{ $nv->gioi_tinh ? 'Nam' : 'Nữ' }}</td>
+                                <td>{{ number_format($nv->luong, -0, ',', '.') }} VNĐ </td>
+                                <td>{{ $nv->phong_ban ?? ''}}</td>
+                                {{-- <td></td>
+            <td></td> --}}
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+            <div class="card-footer">
+                {{ $nhan_viens -> links() }}
             </div>
         </div>
     </div>
 @endsection
-{{-- @push('custom-js')
-    <script>
-        window.addEventListener("load", function() {
-            const loader = document.getElementById("load_screen");
-            if (loader) {
-                loader.style.opacity = '0';
-                loader.style.transition = 'opacity 0.3s ease';
-                setTimeout(() => loader.remove(), 300);
-            }
-        });
-    </script>
-@endpush --}}

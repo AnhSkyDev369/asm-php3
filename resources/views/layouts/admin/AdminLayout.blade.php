@@ -50,7 +50,7 @@
             href="../src/assets/css/dark/elements/alert.css"> --}}
     <link rel="stylesheet" type="text/css" href="{{ asset('/cork/html/src/assets/css/dark/elements/alert.css') }}">
     <!-- END PAGE LEVEL PLUGINS/CUSTOM STYLES -->
-
+    @stack('custom-css')
 </head>
 
 <body class="layout-boxed" layout="boxed">
@@ -131,6 +131,7 @@
 
     <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
     <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
+    @stack('custom-js')
 </body>
 
 <!-- Mirrored from designreset.com/cork/html/vertical-light-menu/layout-boxed.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 25 Jul 2025 10:47:10 GMT -->
