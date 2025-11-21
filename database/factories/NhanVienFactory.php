@@ -13,11 +13,17 @@ class NhanVienFactory extends Factory
      *
      * @return array<string, mixed>
      */
+
     /**
-     * II. Factory và Seeder (1)
-     * Tạo Factory hoặc Seeder để sinh ra 100 bản ghi dữ liệu test cho bảng nhan_viens .
-     * 1.   Tạo Factory cho bảng nhan_viens
-     *          php artisan make:factory NhanVienFactory --model=NhanVien
+     * II. Factory & Seeder
+     * 1.   Tạo Factory hoặc Seeder để sinh ra 100 bản ghi dữ liệu test cho bảng nhan_viens .
+     * -    Tạo Factory cho bảng nhan_viens
+     *          + php artisan make:factory NhanVienFactory --model=NhanVien
+     *      
+     * -    Tạo Seeder cho bảng nhan_viens
+     *          + php artisan make:seeder NhanVienSeeder 
+     * 
+     * -    Dùng cả Seeder + Factory để sinh ra nhiều dữ liệu test tự động (100 bản ghi)
      */
     public function definition(): array
     {

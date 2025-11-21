@@ -57,6 +57,9 @@
                             <li>
                                 <a href="{{ route('nhanvien.index') }}"> DS Nhân Viên </a>
                             </li>
+                             <li>
+                                <a href="{{ route('tintuc.index') }}"> DS Tin Tức </a>
+                            </li>
                         </ul>
                     </li>
 

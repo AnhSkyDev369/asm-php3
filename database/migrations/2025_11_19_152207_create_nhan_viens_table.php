@@ -20,7 +20,7 @@ return new class extends Migration
      * luong (decimal 10,2)
      * phong_ban (string)
      * 
-     * 1.   Tạo bảng nhan_viens với lênh:
+     * 1.   Tạo bảng nhan_viens với lệnh:
      *          php artisan make:migrate create_nhan_viens_table
      */
     public function up(): void

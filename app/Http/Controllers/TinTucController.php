@@ -1,10 +1,11 @@
 <?php
 namespace App\Http\Controllers;
 
-use App\Models\NhanVien;
+use App\Models\TinTuc;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
-class NhanVienController extends Controller
+class TinTucController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -12,25 +13,28 @@ class NhanVienController extends Controller
 
     /**
      * III. Controller & Model
-     * 2.    Tạo Controller: NhanVienController
-     * -    Chạy lệnh php artisan make:controller NhanVienController --resource
+     * 2. Tạo Controller: TinTucController
+     * -    Chạy lệnh:
+     *      +   php artisan make:controller TinTucController --resource
      */
 
-    // III. Controller & Model
-    // 3.    Trong Controller, lấy danh sách nhân viên sắp xếp theo id từ nhỏ đến lớn (asc).
+    //  III. Controller & Model 
+    // 3. Trong Controller, lấy danh sách tin tức theo điều kiện hiển thị = true
     public function index()
     {
-        //  Hiển thị danh sách nhân viên lấy theo id sắp xếp từ nhỏ đến lớn (asc)
+        // Lấy danh sách tin tức theo điều kiện hien_thi = true
 
         // Sử dụng Query Builder (Làm việc trực tiếp với SQL thuần nhưng có cú pháp PHP)
-        // $nhan_viens = DB::table('nhan_viens')
+        // $tin_tucs = DB::table('tin_tucs')
+        //     ->where('hien_thi', true)
         //     ->orderBy('id', 'asc')
         //     ->paginate(10);
 
         //  Sử dụng Eloquent ORM (Cần tạo Model)
-        $nhan_viens = NhanVien::orderBy('id', 'asc')
-                            ->paginate(10);
-        return view('ListNhanVien', compact('nhan_viens'));
+        $tin_tucs = TinTuc::where('hien_thi', true)
+                        ->orderBy('id', 'desc')
+                        ->paginate(10);
+        return view('ListTinTuc', compact('tin_tucs'));
     }
 
     /**

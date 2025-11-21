@@ -10,11 +10,16 @@ class NhanVienSeeder extends Seeder
     /**
      * Run the database seeds.
      */
-    /**
-     * II. Factory và Seeder (1)
-     * Tạo Factory hoặc Seeder để sinh ra 100 bản ghi dữ liệu test cho bảng nhan_viens .
-     * 2. Tạo Seeder dùng Factory
-     *      php artisan make:seeder NhanVienSeeder
+       /**
+     * II. Factory & Seeder
+     * (1)  Tạo Factory hoặc Seeder để sinh ra 100 bản ghi dữ liệu test cho bảng nhan_viens .
+     * -    Tạo Factory cho bảng nhan_viens
+     *          + php artisan make:factory NhanVienFactory --model=NhanVien
+     *      
+     * -    Tạo Seeder cho bảng nhan_viens
+     *          + php artisan make:seeder NhanVienSeeder 
+     * 
+     * -    Dùng cả Seeder + Factory để sinh ra nhiều dữ liệu test tự động
      */
     public function run(): void
     {
